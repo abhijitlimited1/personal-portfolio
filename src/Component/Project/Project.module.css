@@ -70,6 +70,10 @@
     border: 2px solid var(--primary-color);
     border-radius: 10px;
 }
+
+.isProject{
+    color: green;
+}
 @media screen and (max-width:900px){
    .container{
     padding: 60px 60px;
