@@ -1,0 +1,30 @@
+@import "../Vars.css";
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 100px;
+    margin-bottom: 40px;
+    padding: 0 140px;
+    color: gray;
+}
+
+.title{
+    font-weight: 400;
+}
+.icon{
+    font-size: 38px;
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+@media screen and (max-width:620px) {
+    .footer{
+        flex-direction: column;
+    }
+    .title{
+        margin-bottom: 10px;
+    }
+}

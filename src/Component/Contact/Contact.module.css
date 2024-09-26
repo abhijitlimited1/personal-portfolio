@@ -1,0 +1,125 @@
+@import "../Vars.css";
+
+.container{
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 140px;
+    flex-wrap: wrap;
+}
+
+.form{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+}
+.form input{
+    width:100%;
+    margin-bottom: 10px;
+    padding: 15px 10px;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    background: #212c3b;
+    color: var(--color-text);
+}
+
+.message{
+    padding: 15px 10px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    resize: none;
+    font-size: 18px;
+    background: #212c3b;
+    color: var(--color-text);
+}
+.btn{
+    width: 40% !important;
+    background: var(--primary-color) !important;
+    color: var(--color-text) !important;
+    cursor: pointer;
+}
+.title{
+    font-size: 38px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+.info{
+    color: var(--color-text);
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.icon{
+    font-size: 38px;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+.header{
+    color: var(--color-text);
+    margin-bottom: 20px;
+}
+
+.success{
+    color: greenyellow;
+    margin-bottom: 10px;
+}
+@media screen and (max-width:150px) {
+    .container{
+        padding: 0 20px;
+    }
+}
+
+@media screen and (max-width:880px) {
+    .container{
+        flex-direction: column;
+        padding: 0 10px;
+    }
+    .contactInfo{
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .title{
+        margin-right: 12px;
+    }
+    .info{
+       margin-right: 12px
+    }
+}
+
+@media screen and (max-width:705px) {
+    .contactInfo{
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width:430px) {
+    .form{
+        align-items: center;
+        justify-content: center;
+    }
+    .header{
+        font-size: 16px;
+        text-align: center;
+    }
+    .form input{
+        width: 80%;
+    }
+    .message{
+       width: 80%;
+    }
+    .contactInfo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 20px;
+    }
+}

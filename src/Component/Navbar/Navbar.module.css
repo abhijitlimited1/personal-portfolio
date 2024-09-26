@@ -1,0 +1,83 @@
+@import "../Vars.css";
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 100px;
+    position: relative;
+}
+.title{
+    color: var(--title-color);
+    letter-spacing: 1.8px;
+    font-size: 38px;
+    font-family: 'Brush Script MT', cursive;
+}
+.links{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+.link{
+    margin: 0 20px;
+}
+.link a{
+    text-decoration: none;
+    color: var(--color-text);
+    font-size: 20px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+.active a{
+    color: var(--title-color);
+}
+.link a:hover{
+    color: var(--title-color);
+}
+
+.line{
+    color: var(--color-text);
+    font-size: 38px;
+    cursor: pointer;
+    display: none;
+}
+
+@media  screen and (max-width:970px) {
+    .links{
+        flex-direction: column;
+        width: 100px;
+        position: absolute;
+        display: none;
+        top: 60px;
+        right: 100px;
+    }
+    .link{
+        margin: 20px 0;
+    }
+    .link a{
+        font-size: 18px;
+    }
+    .line{
+        display: block;
+
+    }
+    .show{
+        display: block;
+    }
+}
+
+@media screen and (max-width: 573px) {
+    .container{
+        padding: 10px 30px;
+    }
+    .title{
+        font-size: 35px;
+    }
+    .links{
+        right: 20px;
+    }
+    .link{
+        margin: 20px 0;
+    }
+}

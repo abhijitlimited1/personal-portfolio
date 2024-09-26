@@ -1,0 +1,43 @@
+@import "../Vars.css";
+
+.container{
+    padding: 20px 150px;
+    color: var(--color-text);
+
+}
+
+.title{
+    font-size: 38px;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.info{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 40px;
+    word-spacing: 5px;
+}
+
+.skill{
+    color: var(--primary-color);
+    font-weight: 900;
+}
+
+@media screen and (max-width:830px) {
+    .container{
+        padding: 2px 60px;
+    }
+}
+
+@media screen and (max-width:578px){
+    .container{
+        padding: 20px 20px;
+    }
+    .info{
+        padding: 0 20px;
+    }
+    .title{
+        margin-left: 20px;
+    }
+}
