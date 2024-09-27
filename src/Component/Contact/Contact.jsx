@@ -31,7 +31,10 @@ function Contact({ handleClick }) {
       <div className={styles.contactInfo}>
         <h1 className={styles.title}>Connect with me:</h1>
         <p className={styles.info}>Satisfied with me?Please contact me</p>
-        <a href="#" className={styles.icon}>
+        <a
+          href="https://www.linkedin.com/in/abhijit-hemram-66b431254/"
+          className={styles.icon}
+        >
           <TiSocialLinkedin />
         </a>
       </div>
