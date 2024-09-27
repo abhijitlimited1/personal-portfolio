@@ -32,7 +32,7 @@ function Contact({ handleClick }) {
         <h1 className={styles.title}>Connect with me:</h1>
         <p className={styles.info}>Satisfied with me?Please contact me</p>
         <a
-          href="https://www.linkedin.com/in/abhijit-hemram-66b431254/"
+          href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile"
           className={styles.icon}
         >
           <TiSocialLinkedin />
