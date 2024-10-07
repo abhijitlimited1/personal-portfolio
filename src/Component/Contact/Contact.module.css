@@ -59,6 +59,7 @@
     font-size: 38px;
     color: var(--primary-color);
     text-decoration: none;
+    margin-left: 10px;
 }
 .header{
     color: var(--color-text);
