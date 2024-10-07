@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import styles from "./Contact.module.css";
 import { TiSocialLinkedin } from "react-icons/ti";
+import { FaGithub } from "react-icons/fa";
 
 function Contact({ handleClick }) {
   const name = useRef("");
@@ -37,6 +38,14 @@ function Contact({ handleClick }) {
           target="_blank"
         >
           <TiSocialLinkedin />
+        </a>
+
+        <a
+          href="https://github.com/abhijitlimited1"
+          className={styles.icon}
+          target="_blank"
+        >
+          <FaGithub />
         </a>
       </div>
       <form className={styles.form} onSubmit={handleSubmit}>
