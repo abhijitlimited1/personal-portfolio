@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Footer.module.css";
 import { TiSocialLinkedin } from "react-icons/ti";
+import { FaGithub } from "react-icons/fa";
 
 function Footer() {
   return (
@@ -14,6 +15,13 @@ function Footer() {
         target="_blank"
       >
         <TiSocialLinkedin />
+      </a>
+      <a
+        href="https://github.com/abhijitlimited1"
+        className={styles.icon}
+        target="_blank"
+      >
+        <FaGithub />
       </a>
     </section>
   );
