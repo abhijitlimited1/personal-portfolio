@@ -1,43 +1,223 @@
 @import "../Vars.css";
 
-.container{
-    padding: 20px 150px;
+.container {
+    padding: 100px 150px;
     color: var(--color-text);
-
+    background-color: rgba(30, 30, 44, 0.3);
+    position: relative;
 }
 
-.title{
-    font-size: 38px;
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top right, rgba(122, 52, 235, 0.1), transparent 70%);
+    pointer-events: none;
+}
+
+.aboutHeader {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.title {
+    font-size: 42px;
+    margin-bottom: 15px;
+    color: var(--color-text);
+    display: inline-block;
+    position: relative;
+}
+
+.titleUnderline {
+    height: 4px;
+    width: 80px;
+    background: var(--primary-color);
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.aboutContent {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+.aboutImageContainer {
+    flex: 1;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    max-width: 400px;
+    border: 2px solid rgba(122, 52, 235, 0.3);
+}
+
+.aboutImage {
+    width: 100%;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.aboutImageContainer:hover .aboutImage {
+    transform: scale(1.05);
+}
+
+.imageOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(122, 52, 235, 0.2), transparent);
+}
+
+.aboutInfo {
+    flex: 2;
+}
+
+.aboutSubtitle {
+    font-size: 28px;
     margin-bottom: 20px;
     color: var(--primary-color);
 }
 
-.info{
-    font-size: 20px;
+.info {
+    font-size: 18px;
     font-weight: 400;
-    line-height: 40px;
-    word-spacing: 5px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    color: var(--color-text-dark);
 }
 
-.skill{
+.skillsContainer {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.skillsTitle {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--color-text);
+}
+
+.skillBars {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.skillItem {
+    width: 100%;
+}
+
+.skillInfo {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.skillName {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.skillPercentage {
     color: var(--primary-color);
-    font-weight: 900;
+    font-weight: 600;
 }
 
-@media screen and (max-width:830px) {
-    .container{
-        padding: 2px 60px;
+.skillBar {
+    height: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.skillProgress {
+    height: 100%;
+    background: linear-gradient(to right, var(--primary-color), var(--primary-color-light));
+    border-radius: 10px;
+    transition: width 1s ease-in-out;
+}
+
+.contactButton {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary-color);
+    margin-top: 20px;
+}
+
+.contactButton:hover {
+    background: transparent;
+    color: var(--primary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(122, 52, 235, 0.3);
+}
+
+@media screen and (max-width: 1200px) {
+    .container {
+        padding: 80px 100px;
     }
 }
 
-@media screen and (max-width:578px){
-    .container{
-        padding: 20px 20px;
+@media screen and (max-width: 992px) {
+    .container {
+        padding: 80px 60px;
     }
-    .info{
+    
+    .aboutContent {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .aboutImageContainer {
+        margin: 0 auto 40px;
+    }
+    
+    .skillInfo {
         padding: 0 20px;
     }
-    .title{
-        margin-left: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 60px 40px;
+    }
+    
+    .title {
+        font-size: 36px;
+    }
+    
+    .aboutSubtitle {
+        font-size: 24px;
+    }
+    
+    .info {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .container {
+        padding: 40px 20px;
+    }
+    
+    .title {
+        font-size: 30px;
+    }
+    
+    .aboutImageContainer {
+        max-width: 280px;
     }
 }

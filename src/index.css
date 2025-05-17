@@ -4,9 +4,10 @@
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
+
 html {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: thin;
+  -ms-overflow-style: thin;
   scroll-behavior: smooth;
 }
 
@@ -14,10 +15,49 @@ body{
   width: 100%;
   height: 100%;
   background: #181824;
+  background-image: radial-gradient(rgba(122, 52, 235, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
   overflow: hidden;
   overflow-y: scroll;
+  position: relative;
 }
 
-::-webkit-scrollbar{
-  display: none;
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(122, 52, 235, 0.05) 0%, rgba(4, 17, 180, 0.05) 100%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #181824;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7a34eb;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9a67f0;
+}
+
+/* Add smooth transitions to all elements */
+a, button, input, textarea {
+  transition: all 0.3s ease;
+}
+
+/* Add a selection style */
+::selection {
+  background: #7a34eb;
+  color: #fff;
 }

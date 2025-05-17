@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.css";
 import Navbar from "./Component/Navbar/Navbar";
 import Hero from "./Component/Hero/Hero";
@@ -8,6 +9,12 @@ import Footer from "./Component/Footer/Footer";
 import emailjs from "emailjs-com";
 
 function App() {
+  const [notification, setNotification] = useState({
+    show: false,
+    type: "",
+    message: "",
+  });
+
   function handleClick(name, email, message) {
     const data = {
       name,
@@ -15,14 +22,42 @@ function App() {
       message,
     };
 
-    // Sending email via EmailJS
+    // Show loading notification
+    setNotification({
+      show: true,
+      type: "loading",
+      message: "Sending your message...",
+    });
 
+    // Sending email via EmailJS
     emailjs
       .send("service_5xzbgbj", "template_ir685i8", data, "nMtN869hzk9bgAhaC")
       .then(
-        (result) => {},
+        (result) => {
+          // Show success notification
+          setNotification({
+            show: true,
+            type: "success",
+            message: "Message sent successfully! I'll get back to you soon.",
+          });
+
+          // Hide notification after 5 seconds
+          setTimeout(() => {
+            setNotification({ show: false, type: "", message: "" });
+          }, 5000);
+        },
         (error) => {
-          alert("An error occurred, please try again later");
+          // Show error notification
+          setNotification({
+            show: true,
+            type: "error",
+            message: "An error occurred, please try again later.",
+          });
+
+          // Hide notification after 5 seconds
+          setTimeout(() => {
+            setNotification({ show: false, type: "", message: "" });
+          }, 5000);
         }
       );
   }
@@ -33,8 +68,23 @@ function App() {
       <Hero />
       <About />
       <Project />
-      <Contact handleClick={handleClick} />
+      <Contact handleClick={handleClick} notification={notification} />
       <Footer />
+
+      {/* Global Notification */}
+      {notification.show && (
+        <div className={`notification ${notification.type}`}>
+          <p>{notification.message}</p>
+          <button
+            className="close-notification"
+            onClick={() =>
+              setNotification({ show: false, type: "", message: "" })
+            }
+          >
+            ×
+          </button>
+        </div>
+      )}
     </>
   );
 }
