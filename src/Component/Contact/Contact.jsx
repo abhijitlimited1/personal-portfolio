@@ -115,7 +115,7 @@ function Contact({ handleClick, notification }) {
               </a>
 
               <a
-                href="mailto:contact@example.com"
+                href="mailto:abhijitlimited1@gmail.com"
                 className={styles.socialIcon}
                 aria-label="Email Me"
               >

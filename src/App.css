@@ -90,7 +90,7 @@
 }
 
 /* Responsive adjustments */
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   .notification {
     bottom: 20px;
     right: 20px;
@@ -98,5 +98,20 @@
     min-width: auto;
     max-width: none;
     width: calc(100% - 40px);
+    padding: 12px 20px;
+  }
+  
+  .notification p {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .notification {
+    bottom: 15px;
+    right: 15px;
+    left: 15px;
+    width: calc(100% - 30px);
+    padding: 10px 15px;
   }
 }

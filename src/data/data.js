@@ -1,8 +1,17 @@
 import healthToolkitImg from '../assets/calculator.webp';
 import typlyImg from '../assets/todo.avif';
 import typeAceImg from '../assets/login.jpg';
+import converterImg from '../assets/converter.jpg';
 
 export const data = [
+  {
+    projectName: "File Converter",
+    projectImg: converterImg,
+    description: "A free online tool that converts JPG to PDF and PDF to JPG/PNG. Process files directly in the browser with no registration required.",
+    liveLink: "https://convertjpgpdf.netlify.app/",
+    githubLink: "https://github.com/abhijitlimited1/file-converter",
+    technologies: ["JavaScript", "HTML5", "CSS3", "PDF.js", "File API"]
+  },
   {
     projectName: "Health Toolkit",
     projectImg: healthToolkitImg,

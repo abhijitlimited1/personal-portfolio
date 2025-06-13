@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import styles from "./Hero.module.css";
 import profile from "../../assets/avatar1.png";
+import resumeFile from "../../assets/resume.jpg";
 import {
   FaUser,
   FaCode,
@@ -104,7 +105,7 @@ function Hero() {
         </div>
         <div className={styles.socialLinks}>
           <a
-            href="https://github.com"
+            href="https://github.com/abhijitlimited1"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.socialIcon}
@@ -112,14 +113,19 @@ function Hero() {
             <FaGithub />
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.socialIcon}
           >
             <FaLinkedin />
           </a>
-          <a href="#" className={styles.socialIcon} title="Download Resume">
+          <a
+            href={resumeFile}
+            download="Abhijit_Hemram_Resume.jpg"
+            className={styles.socialIcon}
+            title="Download Resume"
+          >
             <FaDownload />
           </a>
           <a href="#contact" className={styles.socialIcon} title="Contact Me">
