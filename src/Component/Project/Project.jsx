@@ -91,30 +91,46 @@ function Project() {
                     className={styles.image}
                     onError={(e) => {
                       e.target.onerror = null;
-                      e.target.src =
-                        "https://via.placeholder.com/300x150?text=Project+Image";
+                      if (project.status === "In Progress") {
+                        // Create a local SVG data URI for in-progress projects
+                        e.target.src =
+                          "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200' viewBox='0 0 400 200'%3E%3Crect width='400' height='200' fill='%236366f1'/%3E%3Ctext x='200' y='90' text-anchor='middle' fill='white' font-family='Arial, sans-serif' font-size='18' font-weight='bold'%3E🚀 AI Resume Builder%3C/text%3E%3Ctext x='200' y='120' text-anchor='middle' fill='white' font-family='Arial, sans-serif' font-size='14'%3EIn Progress%3C/text%3E%3C/svg%3E";
+                      } else {
+                        // Create a local SVG data URI for regular projects
+                        e.target.src =
+                          "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200' viewBox='0 0 400 200'%3E%3Crect width='400' height='200' fill='%23374151'/%3E%3Ctext x='200' y='100' text-anchor='middle' dy='0.35em' fill='white' font-family='Arial, sans-serif' font-size='16'%3EProject Image%3C/text%3E%3C/svg%3E";
+                      }
                     }}
                   />
                   <div className={styles.projectOverlay}>
                     <div className={styles.projectLinks}>
-                      <a
-                        className={styles.projectLink}
-                        href={project.liveLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`View ${project.projectName} live`}
-                      >
-                        <FaExternalLinkAlt />
-                      </a>
-                      <a
-                        className={styles.projectLink}
-                        href={project.githubLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`View ${project.projectName} GitHub repository`}
-                      >
-                        <FaGithub />
-                      </a>
+                      {project.liveLink ? (
+                        <a
+                          className={styles.projectLink}
+                          href={project.liveLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`View ${project.projectName} live`}
+                        >
+                          <FaExternalLinkAlt />
+                        </a>
+                      ) : null}
+                      {project.githubLink ? (
+                        <a
+                          className={styles.projectLink}
+                          href={project.githubLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`View ${project.projectName} GitHub repository`}
+                        >
+                          <FaGithub />
+                        </a>
+                      ) : null}
+                      {project.status === "In Progress" && (
+                        <div className={styles.statusBadge}>
+                          <span>🚀 In Progress</span>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -134,22 +150,37 @@ function Project() {
                   )}
 
                   <div className={styles.projectButtons}>
-                    <a
-                      className={styles.view}
-                      href={project.liveLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      View Live <FaExternalLinkAlt className={styles.btnIcon} />
-                    </a>
-                    <a
-                      className={styles.source}
-                      href={project.githubLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      GitHub <FaGithub className={styles.btnIcon} />
-                    </a>
+                    {project.status === "In Progress" ? (
+                      <div className={styles.inProgressContainer}>
+                        <span className={styles.inProgressBadge}>
+                          🚀 Work in Progress
+                        </span>
+                        <p className={styles.inProgressText}>
+                          This project is currently under development. Stay
+                          tuned for updates!
+                        </p>
+                      </div>
+                    ) : (
+                      <>
+                        <a
+                          className={styles.view}
+                          href={project.liveLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          View Live{" "}
+                          <FaExternalLinkAlt className={styles.btnIcon} />
+                        </a>
+                        <a
+                          className={styles.source}
+                          href={project.githubLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          GitHub <FaGithub className={styles.btnIcon} />
+                        </a>
+                      </>
+                    )}
                   </div>
                 </div>
               </div>

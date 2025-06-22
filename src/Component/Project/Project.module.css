@@ -307,6 +307,61 @@
     font-size: 16px;
 }
 
+/* In Progress Styles */
+.statusBadge {
+    background: rgba(255, 193, 7, 0.9);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(255, 193, 7, 0.3);
+}
+
+.inProgressContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.inProgressBadge {
+    background: linear-gradient(135deg, #ff9800, #ff5722);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+    animation: pulse 2s infinite;
+    display: inline-block;
+}
+
+.inProgressText {
+    color: var(--color-text-dark);
+    font-size: 14px;
+    margin: 0;
+    font-style: italic;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(255, 152, 0, 0.4);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+    }
+}
+
 @keyframes spin {
     to {
         transform: rotate(360deg);
