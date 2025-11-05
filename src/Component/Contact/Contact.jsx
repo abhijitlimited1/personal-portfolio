@@ -51,8 +51,31 @@ function Contact({ handleClick, notification }) {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Call the parent component's handleClick function
-    handleClick(formState.name, formState.email, formState.message);
+    fetch("https://formspree.io/f/mvgalbrd", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: formState.name,
+        email: formState.email,
+        message: formState.message,
+      }),
+    })
+      .then((response) => {
+        if (response.ok) {
+          alert("Message sent successfully!");
+          setFormState({ name: "", email: "", message: "" });
+        } else {
+          alert("Failed to send message. Please try again.");
+        }
+        setIsSubmitting(false);
+      })
+      .catch((error) => {
+        console.error("Error sending form:", error);
+        alert("Error sending message.");
+        setIsSubmitting(false);
+      });
   }
 
   return (
